@@ -37,20 +37,7 @@ RUN set -ex \
  && touch '/System/Library/Fonts/ヒラギノ角ゴシック W7.ttc' \
  && touch '/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc' \
  && touch '/System/Library/Fonts/ヒラギノ角ゴシック W9.ttc' \
- && mkdir -p /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron \
- && ln -s '/System/Library/Fonts/ヒラギノ明朝 ProN.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSerif.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ丸ゴ ProN W4.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSansR-W4.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W0.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W0.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W1.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W1.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W2.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W2.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W3.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W4.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W4.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W5.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W5.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W6.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W7.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W7.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W8.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W8.ttc \
- && ln -s '/System/Library/Fonts/ヒラギノ角ゴシック W9.ttc' /usr/local/texlive/texmf-local/fonts/opentype/hiragino-highsierra-pron/HiraginoSans-W9.ttc \
- && cjk-gs-integrate --fontdef-add cjkgs-macos-highsierra.dat \
+ && cjk-gs-integrate --link-texmf --fontdef-add cjkgs-macos-highsierra.dat \
  && kanji-config-updmap-sys --jis2004 hiragino-highsierra-pron \
  && mktexlsr \
  && rm -f /System/Library/Fonts/*.ttc \
